@@ -1,0 +1,239 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+:root {
+    --white: rgba(255, 255, 255, 1);
+    --dark-blue--dark-blue-100: rgba(96, 158, 212, 1);
+    --dark-blue--dark-blue-200: rgba(53, 110, 169, 1);
+    --dark-blue--dark-blue-300: rgba(10, 56, 113, 1);
+    --dark-blue--dark-blue-400: rgba(7, 43, 97, 1);
+    --dark-blue--dark-blue-500: rgba(5, 32, 81, 1);
+    --light-blue--light-blue-100: rgba(243, 245, 252, 1);
+    --light-blue--light-blue-200: rgba(239, 241, 250, 1);
+    --light-blue--light-blue-300: rgba(233, 236, 248, 1);
+    --light-blue--light-blue-400: rgba(170, 178, 213, 1);
+    --light-blue--light-blue-500: rgba(117, 127, 178, 1);
+    --gray--gray-100: rgba(206, 212, 218, 1);
+    --gray--gray-200: rgba(173, 181, 189, 1);
+    --gray--gray-300: rgba(134, 142, 150, 1);
+    --gray--gray-400: rgba(73, 80, 87, 1);
+    --gray--gray-500: rgba(52, 58, 64, 1);
+    
+    /* Effect styles */
+    --shadow:  0px 24px 32px rgba(0, 0, 0, 0.08);
+    
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* page styles*/
+
+body {
+    background-color: #D8DFE8;
+}
+
+.header h1 {
+    padding-left: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--dark-blue--dark-blue-300);
+}
+
+.main {
+    padding: 2rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.custom-textarea {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    padding: 10px; 
+    box-sizing: border-box; 
+    font-size: 16px; 
+    resize: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--dark-blue--dark-blue-300);
+}
+
+.custom-textarea::placeholder {
+    color: var(--dark-blue--dark-blue-300);
+} 
+
+.warning {
+    color: var(--gray--gray-400);
+    line-height: 2rem;
+}
+
+.warning svg {
+    margin-right: 10px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    min-width: 15rem;
+    border-radius: 10px;
+    border: 0;
+    padding: 0.8rem 3rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--dark-blue--dark-blue-300);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background-color: #E5E5E5;
+    color: var(--dark-blue--dark-blue-300);
+    border: 1px solid var(--dark-blue--dark-blue-300);
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: var(--shadow); 
+    padding: 2rem;
+    min-width: 15rem;
+}
+
+.no-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.hide {
+    display: none !important;
+}
+
+.card h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.copy {
+    background: transparent;
+    border: 1px solid var(--dark-blue--dark-blue-300);
+}
+
+.result-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 1.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@media screen and (max-width: 768px) {
+    .btns {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        gap: 10px;
+    }
+
+    .container {
+        display: block;
+    }
+}
